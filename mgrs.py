@@ -522,6 +522,10 @@ def getNorthingFromChar(n, set):
             rewindMarker = True
 
         northingValue += 100000.0
+    
+    # the loop adds 100km for each step before the target
+    # so we need to add one more for the current letter itself
+    northingValue += 100000.0
 
     return northingValue
 
@@ -693,3 +697,4 @@ if __name__ == '__main__':
 
     print(LLtoMGRS(39.84389877319336, 29.5625991821))
     print(MGRStoLL("38SLL1234567890"))
+
